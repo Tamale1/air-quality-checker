@@ -10,7 +10,7 @@ import AirQualityLevelTable from './AirQualityTable';
 function App() {
   // initialise state *first is the variable and the second element is what we call to update that function
 const [airQualityData, setAirQualityData] = useState()
-const [error, seterror] = useState(null)
+const [error, seterror]= useState(null)
 
 
   const getAircondition = async(city)=>{
@@ -36,8 +36,9 @@ const [error, seterror] = useState(null)
   return (
     <div className='container'>
    <h1 className='mt-5 mb-3'>Air quality index</h1>
-   <Searchbar getAircondition={getAircondition}/>
-   {error &&(//using the && means if error display it else do not do any thing at all
+   <Searchbar getAircondition={getAircondition} />
+   {error &&(
+   //using the && means if error display it else do not do any thing at all
     <div className='alert alert-danger ' role='alert'>
       {error}
     </div>
